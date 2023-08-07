@@ -53,20 +53,25 @@ const Completed = () => {
                     </div>
                 </div>
                 <div className="row pt-5">
-                    <div className="col-12 col-lg-4 col-sm-6 col-md-4  p-2">
-                        <motion.div variants={inputAnimation} initial="hidden" animate="show" exit="hidden" className="card h-100">
-                            <div className="card-body">
-                                <h6>Title</h6>
-                                <p>Description</p>
-                                <p>
-                                    <FaRegCalendarAlt/> 27/06/2023
-                                    <a className="icon-nav text-primary mx-1"><FaPen /></a>
-                                    <a className="icon-nav text-danger mx-1"><FaRegClipboard /></a>
-                                    <a className="badge btn float-end bg-success">status</a>
-                                </p>
+                    {
+                        CompletedList.map((item , i)=>
+                            <div key={i.toString()} className="col-12 col-lg-4 col-sm-6 col-md-4  p-2">
+                                <motion.div variants={inputAnimation} initial="hidden" animate="show" exit="hidden" className="card h-100">
+                                    <div className="card-body">
+                                        <h6>{item.Title}</h6>
+                                        <p>{item.Description}</p>
+                                        <p>
+                                            <FaRegCalendarAlt/> {item.CreateDate}
+                                            <a className="icon-nav text-primary mx-1"><FaPen /></a>
+                                            <a className="icon-nav text-danger mx-1"><FaRegClipboard /></a>
+                                            <a className="badge btn float-end bg-success">{item.Status}</a>
+                                        </p>
+                                    </div>
+                                </motion.div>
                             </div>
-                        </motion.div>
-                    </div>
+                        )
+                    }
+
                 </div>
             </div>
         </div>

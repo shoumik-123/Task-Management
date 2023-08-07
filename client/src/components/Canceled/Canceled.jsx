@@ -14,6 +14,7 @@ const Canceled = () => {
     const CanceledList = useSelector((state)=> state.task.Canceled)   //redux
 
 
+    console.log(CanceledList)
 
     const inputAnimation = {
         hidden:{
@@ -55,16 +56,16 @@ const Canceled = () => {
                 <div className="row pt-5">
                     {
                         CanceledList.map((item , i)=>
-                            <div className="col-12 col-lg-4 col-sm-6 col-md-4  p-2">
+                            <div key={i.toString()} className="col-12 col-lg-4 col-sm-6 col-md-4  p-2">
                             <motion.div variants={inputAnimation} initial="hidden" animate="show" exit="hidden" className="card h-100">
                             <div className="card-body">
-                            <h6>Title</h6>
-                            <p>Description</p>
+                            <h6>{item.Title}</h6>
+                            <p>{item.Description}</p>
                             <p>
-                            <FaRegCalendarAlt/> 27/06/2023
+                            <FaRegCalendarAlt/> {item.CreateDate}
                             <a className="icon-nav text-primary mx-1"><FaPen /></a>
                             <a className="icon-nav text-danger mx-1"><FaRegClipboard /></a>
-                            <a className="badge btn float-end bg-danger">status</a>
+                            <a className="badge btn float-end bg-danger">{item.Status}</a>
                             </p>
                             </div>
                             </motion.div>

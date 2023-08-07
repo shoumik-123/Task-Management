@@ -141,7 +141,6 @@ export function TaskListByStatus(Status) {
     store.dispatch(ShowLoader())
 
     const URL = BaseURL + "/listTaskByStatus/" + Status;
-
     return axios.get(URL, AxiosHeader)
     .then((res)=>{
     // api call end
@@ -173,19 +172,6 @@ export function TaskListByStatus(Status) {
         store.dispatch((HideLoader()))
 
         ErrorToast("Something Wrong2")
-        if (err.response) {
-            // The request was made and the server responded with a status code
-            console.error('Response data:', err.response.data);
-            console.error('Response status:', err.response.status);
-            console.error('Response headers:', err.response.headers);
-        } else if (err.request) {
-            // The request was made but no response was received
-            console.error('No response received:', err.request);
-        } else {
-            // Something else happened while setting up the request
-            console.error('Error setting up request:', err.message);
-        }
-        console.error('Error config:', err.config);
         return false;
     })
 }
