@@ -13,9 +13,6 @@ const Canceled = () => {
 
     const CanceledList = useSelector((state)=> state.task.Canceled)   //redux
 
-
-    console.log(CanceledList)
-
     const inputAnimation = {
         hidden:{
             width:"0",

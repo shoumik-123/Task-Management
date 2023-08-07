@@ -4,6 +4,7 @@ import store from "../redux/store/store";
 import {HideLoader, ShowLoader} from "../redux/state/settings-slice";
 import {getToken, setToken, setUserDetails} from "../helper/SessionHelper";
 import {SetCanceledTask, SetCompletedTask, SetNewTask, SetProgressTask} from "../redux/state/task-slice";
+import {SetSummary} from "../redux/state/summary-slice";
 
 const BaseURL = "http://localhost:8080/api/v1"
 
@@ -132,9 +133,6 @@ export function NewTaskCreate(title ,description) {
         return false;
     })
 }
-
-
-
 export function TaskListByStatus(Status) {
 
     //api call start
@@ -175,5 +173,36 @@ export function TaskListByStatus(Status) {
         return false;
     })
 }
+export function TaskStatusByCount(Status) {
+
+    //api call start
+    store.dispatch(ShowLoader())
+
+    const URL = BaseURL + "/taskStatusByCount";
+    return axios.get(URL,AxiosHeader)
+    .then((res)=>{
+    // api call end
+        store.dispatch((HideLoader()))
+
+
+        if(res.status===200){
+            store.dispatch(SetSummary(res.data['data']))
+        }
+        else {
+            ErrorToast("Something Wrong")
+            return false;
+        }
+    })
+    .catch((err)=>{
+
+        //api call end
+        store.dispatch((HideLoader()))
+
+        ErrorToast("Something Wrong")
+        return false;
+    })
+}
+
+
 
 

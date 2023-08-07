@@ -60,9 +60,7 @@ exports.updateTaskStatus = (req, res) => {
 
 exports.listTaskByStatus =(req,res)=>{
     let status = req.params.status;
-    console.log("status", status)
     let email = req.headers['email']
-    console.log("email", email)
 
     TasksModel.aggregate([
         {
