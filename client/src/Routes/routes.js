@@ -60,6 +60,22 @@ const routerConfig = getToken()
             path: "/",
             element: <Navigate to={"/login"} replace></Navigate>  //Navigate  to login page
         },
+        {
+            path: "/New",
+            element: <Navigate to={"/login"} replace></Navigate>  //Navigate  to login page
+        },
+        {
+            path: "/Progress",
+            element: <Navigate to={"/login"} replace></Navigate>  //Navigate  to login page
+        },
+        {
+            path: "/Completed",
+            element: <Navigate to={"/login"} replace></Navigate>  //Navigate  to login page
+        },
+        {
+            path: "/Canceled",
+            element: <Navigate to={"/login"} replace></Navigate>  //Navigate  to login page
+        },
 
         {
             path: "/login",

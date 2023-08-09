@@ -3,6 +3,9 @@ import {motion} from "framer-motion";
 import {FaPen, FaRegCalendarAlt, FaRegClipboard} from "react-icons/fa";
 import {TaskListByStatus} from "../../APIRequest/APIRequest";
 import {useSelector} from "react-redux";
+import {DeleteTaskAlert} from "../../helper/DeleteAlert";
+import {ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"
 
 
 const Canceled = () => {
@@ -12,6 +15,12 @@ const Canceled = () => {
     }, []);
 
     const CanceledList = useSelector((state)=> state.task.Canceled)   //redux
+
+    const DeleteItem = (id)=>{
+        DeleteTaskAlert(id)
+    }
+
+
 
     const inputAnimation = {
         hidden:{
@@ -61,7 +70,7 @@ const Canceled = () => {
                             <p>
                             <FaRegCalendarAlt/> {item.CreateDate}
                             <a className="icon-nav text-primary mx-1"><FaPen /></a>
-                            <a className="icon-nav text-danger mx-1"><FaRegClipboard /></a>
+                            <a onClick={DeleteItem.bind(this,item._id)} className="icon-nav text-danger mx-1"><FaRegClipboard /></a>
                             <a className="badge btn float-end bg-danger">{item.Status}</a>
                             </p>
                             </div>
@@ -72,6 +81,7 @@ const Canceled = () => {
 
                 </div>
             </div>
+            <ToastContainer/>
         </div>
     );
 };

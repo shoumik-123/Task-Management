@@ -24,6 +24,7 @@
     "mongoose": "^7.0.3",
     "nodemon": "^2.0.22",
     "react-loader-spinner": "^5.3.4",
+    "sweetalert2": "^11.7.20",
     "xss-clean": "^0.1.1"
   }
 }

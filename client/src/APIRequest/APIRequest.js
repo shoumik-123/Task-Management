@@ -202,7 +202,25 @@ export function TaskStatusByCount(Status) {
         return false;
     })
 }
+export function DeleteRequest(id) {
+    store.dispatch(ShowLoader())
+    const URL = BaseURL + "/deleteTask/" + id;
 
-
-
-
+    return axios.post(URL,AxiosHeader)
+        .then((res)=>{
+            store.dispatch(HideLoader())
+            if(res.status===200){
+                SuccessToast("Task Delete Successful")
+                return true;
+            }
+            else {
+                ErrorToast("Something Wrong")
+                return false;
+            }
+        }).catch((err)=>{
+            store.dispatch(HideLoader());
+            ErrorToast("Something Wrong 2")
+            console.log(err)
+            return false;
+        })
+}
