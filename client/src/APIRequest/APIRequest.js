@@ -219,10 +219,15 @@ export function DeleteRequest(id) {
                 ErrorToast("Something Wrong")
                 return false;
             }
-        }).catch((err)=>{
+        }).catch((err) => {
             store.dispatch(HideLoader());
-            ErrorToast("Something Wrong 2")
-            console.log(err)
+            ErrorToast("Something Wrong 2");
+            if (axios.isAxiosError(err)) {
+                console.log("Axios Error:", err.response); // This will show the full response object
+            } else {
+                console.log("Other Error:", err);
+            }
             return false;
-        })
+        });
+
 }

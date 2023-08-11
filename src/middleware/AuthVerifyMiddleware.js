@@ -5,7 +5,7 @@ module.exports =(req, res, next)=>{
     let Token = req.headers['token-key'];
     jwt.verify(Token , 'SecretKey12345', (err,decode)=>{
         if(err){
-            console.log(Token)
+            console.log("Token",Token)
             res.status(401).json({status:'Unauthorized'})
         }
         else {
