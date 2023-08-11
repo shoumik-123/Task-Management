@@ -7,15 +7,6 @@
     <list default="true" id="acf55433-80d6-40bb-a214-835003827bfb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/APIRequest/APIRequest.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/APIRequest/APIRequest.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Routes/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Canceled/Canceled.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Canceled/Canceled.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Completed/Completed.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Completed/Completed.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/New/New.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/New/New.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Progress/Progress.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Progress/Progress.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/helper/DeleteAlert.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/helper/DeleteAlert.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middleware/AuthVerifyMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware/AuthVerifyMiddleware.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +65,9 @@
       <workItem from="1691345461139" duration="9873000" />
       <workItem from="1691406094894" duration="17248000" />
       <workItem from="1691503033410" duration="10907000" />
+      <workItem from="1691558929616" duration="329000" />
+      <workItem from="1691569538795" duration="2077000" />
+      <workItem from="1691583424277" duration="855000" />
     </task>
     <servers />
   </component>

@@ -206,6 +206,8 @@ export function DeleteRequest(id) {
     store.dispatch(ShowLoader())
     const URL = BaseURL + "/deleteTask/" + id;
 
+    console.log("aaaa",AxiosHeader,"id",id)
+
     return axios.post(URL,AxiosHeader)
         .then((res)=>{
             store.dispatch(HideLoader())
