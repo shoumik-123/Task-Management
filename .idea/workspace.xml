@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="acf55433-80d6-40bb-a214-835003827bfb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/APIRequest/APIRequest.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/APIRequest/APIRequest.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/helper/DeleteAlert.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/helper/DeleteAlert.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middleware/AuthVerifyMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware/AuthVerifyMiddleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/css/sideBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/css/sideBar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/MasterLayout/Master-Layout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/MasterLayout/Master-Layout.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +70,7 @@
       <workItem from="1691569538795" duration="2077000" />
       <workItem from="1691583424277" duration="855000" />
       <workItem from="1691780786636" duration="3521000" />
+      <workItem from="1691865232340" duration="3998000" />
     </task>
     <servers />
   </component>

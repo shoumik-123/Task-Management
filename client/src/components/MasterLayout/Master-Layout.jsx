@@ -92,7 +92,7 @@ const MasterLayout = () => {
     return (
 
         <div>
-            <nav className="navbar">
+            <nav className="navbar fixed-top">
                 <div className="top-section">
                     <div>
                         <FaBars onClick={toggle} />
@@ -126,8 +126,8 @@ const MasterLayout = () => {
             </nav>
 
 
-            <div className="main-container" style={{ width: isOpen }}>
-                <div className="sidebar">
+            <div className="main-container mt-5" style={{ width: isOpen}}>
+                <div className="sidebar mt-3">
                     <motion.div className="sidebar" initial="closed" animate="open" variants={sidebarVariants}>
 
 
