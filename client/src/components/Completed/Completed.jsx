@@ -16,8 +16,13 @@ const Completed = () => {
 
     const CompletedList = useSelector((state)=> state.task.Completed)   //redux
 
+
     const DeleteItem = (id)=>{
-        DeleteTaskAlert(id)
+        DeleteTaskAlert(id).then((result)=>{
+            if(result===true){
+                TaskListByStatus("Completed");
+            }
+        })
     }
 
 

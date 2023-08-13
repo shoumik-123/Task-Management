@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="acf55433-80d6-40bb-a214-835003827bfb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/css/sideBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/css/sideBar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/APIRequest/APIRequest.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/APIRequest/APIRequest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Canceled/Canceled.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Canceled/Canceled.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Completed/Completed.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Completed/Completed.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Progress/Progress.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Progress/Progress.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middleware/AuthVerifyMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware/AuthVerifyMiddleware.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,22 +73,13 @@
       <workItem from="1691569538795" duration="2077000" />
       <workItem from="1691583424277" duration="855000" />
       <workItem from="1691780786636" duration="3521000" />
-      <workItem from="1691865232340" duration="4904000" />
+      <workItem from="1691865232340" duration="5552000" />
+      <workItem from="1691913793454" duration="7345000" />
+      <workItem from="1691947118743" duration="2143000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/client/src/helper/SessionHelper.js</url>
-          <line>8</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

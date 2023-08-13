@@ -202,6 +202,9 @@ export function TaskStatusByCount(Status) {
         return false;
     })
 }
+
+
+
 export function DeleteRequest(id) {
     store.dispatch(ShowLoader())
     const URL = BaseURL + "/deleteTask/" + id;
@@ -231,3 +234,6 @@ export function DeleteRequest(id) {
         });
 
 }
+
+
+

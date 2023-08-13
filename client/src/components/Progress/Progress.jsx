@@ -16,10 +16,14 @@ const Progress = () => {
 
     const ProgressList = useSelector((state)=> state.task.Progress)   //redux
 
-    const DeleteItem = (id)=>{
-        DeleteTaskAlert(id)
-    }
 
+    const DeleteItem = (id)=>{
+        DeleteTaskAlert(id).then((result)=>{
+            if(result===true){
+                TaskListByStatus("Progress");
+            }
+        })
+    }
 
 
 

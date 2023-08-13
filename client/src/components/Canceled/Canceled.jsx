@@ -16,8 +16,13 @@ const Canceled = () => {
 
     const CanceledList = useSelector((state)=> state.task.Canceled)   //redux
 
+
     const DeleteItem = (id)=>{
-        DeleteTaskAlert(id)
+        DeleteTaskAlert(id).then((result)=>{
+            if(result===true){
+                TaskListByStatus("Canceled");
+            }
+        })
     }
 
 
