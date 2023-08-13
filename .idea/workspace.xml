@@ -6,12 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="acf55433-80d6-40bb-a214-835003827bfb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/APIRequest/APIRequest.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/APIRequest/APIRequest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Routes/routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Canceled/Canceled.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Canceled/Canceled.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Completed/Completed.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Completed/Completed.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/MasterLayout/Master-Layout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/MasterLayout/Master-Layout.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/New/New.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/New/New.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Progress/Progress.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Progress/Progress.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/helper/DeleteAlert.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/helper/DeleteAlert.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/helper/SessionHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/helper/SessionHelper.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/helper/UpdateAlert.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/helper/UpdateAlert.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +78,7 @@
       <workItem from="1691780786636" duration="3521000" />
       <workItem from="1691865232340" duration="5552000" />
       <workItem from="1691913793454" duration="7345000" />
-      <workItem from="1691947118743" duration="4949000" />
+      <workItem from="1691947118743" duration="6955000" />
     </task>
     <servers />
   </component>

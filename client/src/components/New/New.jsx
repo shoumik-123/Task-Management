@@ -37,12 +37,8 @@ const New = () => {
     // }
     const UpdateStatus = (id, status) => {
         UpdateAlert(id, status).then((result) => {
-            console.log('UpdateAlert result:', result);
+            TaskListByStatus("New");
 
-            if (result === true) {
-                console.log('Calling TaskListByStatus...');
-                TaskListByStatus("New");
-            }
         });
     }
 

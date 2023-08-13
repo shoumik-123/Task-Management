@@ -28,9 +28,8 @@ const Completed = () => {
 
     const UpdateStatus = (id,status)=>{
         UpdateAlert(id , status).then((result)=>{
-            if(result===true){
-                TaskListByStatus("Completed");
-            }
+            TaskListByStatus("Completed");
+
         })
     }
 

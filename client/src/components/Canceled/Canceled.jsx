@@ -28,9 +28,8 @@ const Canceled = () => {
 
     const UpdateStatus = (id,status)=>{
         UpdateAlert(id , status).then((result)=>{
-            if(result===true){
-                TaskListByStatus("Canceled");
-            }
+            TaskListByStatus("Canceled");
+
         })
     }
 

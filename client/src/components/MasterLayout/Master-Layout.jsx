@@ -11,6 +11,7 @@ import {
 import {NavLink, Link, Outlet} from 'react-router-dom';
 import '../../assets/css/sideBar.css';
 import '../../assets/css/navbar.css'
+import {removeSession} from "../../helper/SessionHelper";
 
 const routes = [
     {
@@ -60,6 +61,11 @@ const MasterLayout = () => {
         setIsOpen(!isOpen);
     };
 
+
+
+    const onLogOut=()=>{
+        removeSession()
+    }
     const inputAnimation = {
         hidden:{
             width:"0",
@@ -112,15 +118,16 @@ const MasterLayout = () => {
                     {isOpenNavbar && (
                         <ul className="profile-menu-dropdown">
                             <li>
-                                <Link to="https://www.facebook.com/shoumik152/" target="_blank">Profile</Link>
+                                <a href="https://www.facebook.com/shoumik152/" target="_blank" rel="noopener noreferrer">Profile</a>
                             </li>
                             <li>
-                                <Link to="/settings">Settings</Link>
+                                <a to="/settings">Settings</a>
                             </li>
                             <li>
-                                <Link to="/logout">Logout</Link>
+                                <a href="/logout" onClick={onLogOut}>Logout</a>
                             </li>
                         </ul>
+
                     )}
                 </div>
             </nav>
