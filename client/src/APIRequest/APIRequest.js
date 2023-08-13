@@ -205,6 +205,8 @@ export function TaskStatusByCount(Status) {
 
 
 
+
+//problem
 export function DeleteRequest(id) {
     store.dispatch(ShowLoader())
     const URL = BaseURL + "/deleteTask/" + id;
@@ -236,4 +238,30 @@ export function DeleteRequest(id) {
 }
 
 
+
+export function UpdateStatus(id,status) {
+    store.dispatch(ShowLoader())
+
+    const URL = BaseURL + "/updateTaskStatus/"+id+"/"+status;
+
+    return axios.get(URL,AxiosHeader).then((res)=>{
+        store.dispatch(HideLoader());
+
+        if(res.status===200){
+            SuccessToast("Update Successful")
+            return true;
+        }
+        else {
+            ErrorToast("Something Wrong")
+            return false;
+        }
+    }) .catch((err)=>{
+
+        //api call end
+        store.dispatch((HideLoader()))
+
+        ErrorToast("Something Wrong2")
+        return false;
+    })
+}
 

@@ -12,8 +12,8 @@ export function DeleteTaskAlert(id){
         confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
         if (result.isConfirmed) {
-            return  DeleteRequest(id).then((DeleteResult)=>{
-                return DeleteResult;
+            return  DeleteRequest(id).then((res)=>{
+                return res;
             })
         }
     })

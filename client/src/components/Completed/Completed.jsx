@@ -6,6 +6,7 @@ import {useSelector} from "react-redux";
 import {DeleteTaskAlert} from "../../helper/DeleteAlert";
 import {ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"
+import {UpdateAlert} from "../../helper/UpdateAlert";
 
 const Completed = () => {
 
@@ -25,7 +26,13 @@ const Completed = () => {
         })
     }
 
-
+    const UpdateStatus = (id,status)=>{
+        UpdateAlert(id , status).then((result)=>{
+            if(result===true){
+                TaskListByStatus("Completed");
+            }
+        })
+    }
 
     const inputAnimation = {
         hidden:{
@@ -74,8 +81,8 @@ const Completed = () => {
                                         <p>{item.Description}</p>
                                         <p>
                                             <FaRegCalendarAlt/> {item.CreateDate}
-                                            <a className="icon-nav text-primary mx-1"><FaPen /></a>
-                                            <a onClick={DeleteItem.bind(this,item._id)} className="icon-nav text-danger mx-1"><FaRegClipboard /></a>
+                                            <a onClick={UpdateStatus.bind(this,item._id,item.Status)} className="icon-nav btn text-primary mx-1"><FaPen /></a>
+                                            <a onClick={DeleteItem.bind(this,item._id)} className="icon-nav btn text-danger mx-1"><FaRegClipboard /></a>
                                             <a className="badge btn float-end bg-success">{item.Status}</a>
                                         </p>
                                     </div>
