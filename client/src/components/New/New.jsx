@@ -21,6 +21,7 @@ const New = () => {
 
 
     const DeleteItem = (id)=>{
+        console.log(id)
         DeleteTaskAlert(id).then((result)=>{
             if(result===true){
                 TaskListByStatus("New");

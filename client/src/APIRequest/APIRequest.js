@@ -10,7 +10,15 @@ const BaseURL = "http://localhost:8080/api/v1"
 
 
 const AxiosHeader ={headers:{"token-key":getToken()}}
-
+// const key = getToken();
+// console.log(key)
+// const AxiosHeader ={headers:{
+//         Authorization: `Bearer ${key}`,
+//
+//
+//     }
+// }
+//
 
 
 
@@ -214,7 +222,9 @@ export function DeleteRequest(id) {
     console.log("aaaa",AxiosHeader,"id",id)
 
     return axios.post(URL,AxiosHeader)
+
         .then((res)=>{
+            console.log('hello axios')
             store.dispatch(HideLoader())
             if(res.status===200){
                 SuccessToast("Task Delete Successful")
@@ -224,16 +234,17 @@ export function DeleteRequest(id) {
                 ErrorToast("Something Wrong")
                 return false;
             }
-        }).catch((err) => {
-            store.dispatch(HideLoader());
-            ErrorToast("Something Wrong 2");
-            if (axios.isAxiosError(err)) {
-                console.log("Axios Error:", err.response); // This will show the full response object
-            } else {
-                console.log("Other Error:", err);
-            }
-            return false;
-        });
+        })
+        // .catch((err) => {
+        //     store.dispatch(HideLoader());
+        //     ErrorToast("Something Wrong 2");
+        //     if (axios.isAxiosError(err)) {
+        //         console.log("Axios Error:", err.response); // This will show the full response object
+        //     } else {
+        //         console.log("Other Error:", err);
+        //     }
+        //     return false;
+        // });
 
 }
 
