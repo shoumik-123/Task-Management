@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {AnimatePresence, motion} from 'framer-motion';
 import {
     FaBars,
@@ -8,10 +8,11 @@ import {
     FaPen, FaPenNib,
     FaRegTrashAlt
 } from 'react-icons/fa';
-import {NavLink, Link, Outlet} from 'react-router-dom';
+
+import {NavLink, Outlet} from 'react-router-dom';
 import '../../assets/css/sideBar.css';
 import '../../assets/css/navbar.css'
-import {removeSession} from "../../helper/SessionHelper";
+import {getUserDetails, removeSession} from "../../helper/SessionHelper";
 
 const routes = [
     {
@@ -48,6 +49,7 @@ const routes = [
 ];
 
 const MasterLayout = () => {
+
 
     // sidebar
     const sidebarVariants = {
@@ -108,12 +110,14 @@ const MasterLayout = () => {
                 </div>
 
                 <div className="profile-menu">
+                    <h6 className="float-start px-5 mt-3">{getUserDetails()[0]['FirstName']} {getUserDetails()[0]['LastName']}</h6>
                     <button className="profile-menu-toggle" onClick={toggleMenu}>
                         <img
                             className="profile-menu-avatar"
-                            src="https://media.licdn.com/dms/image/C4E03AQHouDS3TNY96Q/profile-displayphoto-shrink_800_800/0/1622655546895?e=2147483647&v=beta&t=1LQHT03FVCrZ7c6RyCqc678C4vd6pSUbgjMBznklNiQ"
-                            alt="Profile Avatar"
+                            src={getUserDetails()[0]['Photo']}
+                            alt="Profile"
                         />
+
                     </button>
                     {isOpenNavbar && (
                         <ul className="profile-menu-dropdown">
@@ -121,7 +125,7 @@ const MasterLayout = () => {
                                 <a href="https://www.facebook.com/shoumik152/" target="_blank" rel="noopener noreferrer">Profile</a>
                             </li>
                             <li>
-                                <a to="/settings">Settings</a>
+                                <a href="/settings">Settings</a>
                             </li>
                             <li>
                                 <a href="/logout" onClick={onLogOut}>Logout</a>
