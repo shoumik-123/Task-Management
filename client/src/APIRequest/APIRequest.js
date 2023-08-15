@@ -289,3 +289,42 @@ export function GetProfileDetails() {
             ErrorToast("Something Wrong")
         })
 }
+
+export function UpdateProfile(firstName,lastName,mobile,password,photo) {
+    store.dispatch(ShowLoader());
+
+    const URL = BaseURL + "/UpdateProfile"
+    let PostBody = {
+        FirstName :firstName,
+        LastName :lastName,
+        Mobile :mobile,
+        Password :password,
+        Photo :photo
+    }
+    let UserDetails = {
+        FirstName :firstName,
+        LastName :lastName,
+        Mobile :mobile,
+        Photo :photo
+    }
+
+    return axios.post(URL,PostBody,AxiosHeader)
+        .then((result)=>{
+            store.dispatch(HideLoader())
+            setUserDetails(UserDetails)
+            if(result.status===200){
+                SuccessToast("Profile Update Successful")
+                return true;
+            }
+            else {
+                ErrorToast("Profile Update Failed")
+            }
+        })
+        .catch((err)=>{
+            store.dispatch(HideLoader())
+            ErrorToast("Something Wrong")
+        })
+
+}
+
+

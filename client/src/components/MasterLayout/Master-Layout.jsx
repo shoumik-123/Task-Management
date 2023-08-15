@@ -105,7 +105,7 @@ const MasterLayout = () => {
                     <div>
                         <FaBars onClick={toggle} />
                     </div>
-                    <motion.h1 initial="hidden" animate="show" exit="hidden" variants={inputAnimation} className="logo">logo</motion.h1>
+                    <motion.a href="/" initial="hidden" animate="show" exit="hidden" variants={inputAnimation} className="logo text-light text-decoration-none">logo</motion.a>
 
                 </div>
 
@@ -123,9 +123,6 @@ const MasterLayout = () => {
                         <ul className="profile-menu-dropdown">
                             <li>
                                 <a href="/profile" rel="noopener noreferrer">Profile</a>
-                            </li>
-                            <li>
-                                <a href="/settings">Settings</a>
                             </li>
                             <li>
                                 <a href="/logout" onClick={onLogOut}>Logout</a>
