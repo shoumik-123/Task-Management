@@ -122,7 +122,7 @@ const MasterLayout = () => {
                     {isOpenNavbar && (
                         <ul className="profile-menu-dropdown">
                             <li>
-                                <a href="https://www.facebook.com/shoumik152/" target="_blank" rel="noopener noreferrer">Profile</a>
+                                <a href="/profile" rel="noopener noreferrer">Profile</a>
                             </li>
                             <li>
                                 <a href="/settings">Settings</a>

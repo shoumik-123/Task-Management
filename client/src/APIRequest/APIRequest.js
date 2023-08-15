@@ -5,20 +5,12 @@ import {HideLoader, ShowLoader} from "../redux/state/settings-slice";
 import {getToken, setToken, setUserDetails} from "../helper/SessionHelper";
 import {SetCanceledTask, SetCompletedTask, SetNewTask, SetProgressTask} from "../redux/state/task-slice";
 import {SetSummary} from "../redux/state/summary-slice";
+import {SetProfile} from "../redux/state/profil-slice";
 
 const BaseURL = "http://localhost:8080/api/v1"
 
 
 const AxiosHeader ={headers:{"token-key":getToken()}}
-// const key = getToken();
-// console.log(key)
-// const AxiosHeader ={headers:{
-//         Authorization: `Bearer ${key}`,
-//
-//
-//     }
-// }
-//
 
 
 
@@ -276,3 +268,24 @@ export function UpdateStatus(id,status) {
     })
 }
 
+
+export function GetProfileDetails() {
+    store.dispatch(ShowLoader())
+
+    const URL = BaseURL + "/ProfileDetails"
+
+    axios.get(URL,AxiosHeader)
+        .then((res)=>{
+            store.dispatch(HideLoader())
+            if (res.status===200){
+                store.dispatch(SetProfile(res.data['data'][0]))
+            }
+            else {
+                ErrorToast("Something Wrong")
+            }
+        })
+        .catch((err)=>{
+            store.dispatch(HideLoader())
+            ErrorToast("Something Wrong")
+        })
+}
