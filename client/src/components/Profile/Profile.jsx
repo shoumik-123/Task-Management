@@ -89,7 +89,7 @@ const Profile = () => {
         }
         ,
         show:{
-            width: "140px",
+            width: "100%",
             padding: "5px 15px",
             transition:{
                 duration:0.2
@@ -135,7 +135,7 @@ const Profile = () => {
 
 
 
-            <div className="row d-flex justify-content-center mt-5">
+            <motion.div initial="hidden" animate="show" exit="hidden" variants={inputAnimation} className="row d-flex justify-content-center mt-5">
                 <div className="col-md-12">
                     <div className="card">
                         <div className="card-body">
@@ -176,7 +176,7 @@ const Profile = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </motion.div>
             <ToastContainer/>
         </div>
     );
