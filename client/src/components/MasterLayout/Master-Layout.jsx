@@ -110,11 +110,11 @@ const MasterLayout = () => {
                 </div>
 
                 <div className="profile-menu">
-                    <h6 className="float-start px-5 mt-3">{getUserDetails()[0]['FirstName']} {getUserDetails()[0]['LastName']}</h6>
+                    <h6 className="float-start px-5 mt-3">{getUserDetails()[0].FirstName} {getUserDetails()[0].LastName}</h6>
                     <button className="profile-menu-toggle" onClick={toggleMenu}>
                         <img
                             className="profile-menu-avatar"
-                            src={getUserDetails()[0]['Photo']}
+                            src={getUserDetails().Photo}
                             alt="Profile"
                         />
 

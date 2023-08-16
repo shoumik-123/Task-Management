@@ -33,14 +33,33 @@ class FormHelper {
 
 
     //Convert img to base64 js method
-    getBase64(file){
-        return new Promise((resolve, reject)=>{
+    // getBase64(file){
+    //     return new Promise((resolve, reject)=>{
+    //         const reader = new FileReader();
+    //         reader.readAsDataURL(file);
+    //         reader.onload = () => resolve(reader.result);
+    //         reader.onerror = (err) => reject(err)
+    //         console.log(reader)
+    //     })
+    // }
+
+    getBase64(file) {
+        return new Promise((resolve, reject) => {
             const reader = new FileReader();
+
+            reader.onload = (event) => {
+                resolve(event.target.result);
+            };
+
+            reader.onerror = (error) => {
+                reject(error);
+            };
+
             reader.readAsDataURL(file);
-            reader.onload = () => resolve(reader.result);
-            reader.onerror = (err) => reject(err)
-        })
+        });
+
     }
+
 
 
 

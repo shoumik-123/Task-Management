@@ -1,11 +1,10 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {GetProfileDetails, RegistrationRequest, UpdateProfile} from "../../APIRequest/APIRequest";
+import {GetProfileDetails, UpdateProfile} from "../../APIRequest/APIRequest";
 import {useSelector} from "react-redux";
 import {getBase64, IsEmpty, IsMobile} from "../../helper/FormHelper";
 import {toast, ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"
 import {useNavigate} from "react-router-dom";
-import {FaBars} from "react-icons/fa";
 import {motion} from "framer-motion";
 import {getUserDetails, removeSession} from "../../helper/SessionHelper";
 
@@ -15,16 +14,22 @@ const Profile = () => {
 
     useEffect(() => {
         GetProfileDetails()
+        console.log(getUserDetails())
     }, []);
 
+
     const profileData = useSelector((state)=>state.profile.value)
+    console.log(profileData)
 
 
     function PreviewImage() {
         const ImgFile = userImgRef.files[0];
         getBase64(ImgFile).then((base64Img)=>{
             userImgView.src=base64Img;
+            console.log(base64Img)
         })
+
+
     }
 
 
@@ -64,11 +69,6 @@ const Profile = () => {
 
 
 
-
-
-
-
-    //Navbar
     //Navbar
     const [isOpenNavbar, setIsOpenNavbar] = useState(false);
     const toggleMenu = () => {
@@ -109,11 +109,11 @@ const Profile = () => {
                 </div>
 
                 <div className="profile-menu">
-                    <h6 className="float-start px-5 mt-3">{getUserDetails()[0]['FirstName']} {getUserDetails()[0]['LastName']}</h6>
+                    <h6 className="float-start px-5 mt-3">{getUserDetails()[0].FirstName} {getUserDetails()[0].LastName}</h6>
                     <button className="profile-menu-toggle" onClick={toggleMenu}>
                         <img
                             className="profile-menu-avatar"
-                            src={getUserDetails()[0]['Photo']}
+                            src={getUserDetails()[0].Photo}
                             alt="Profile"
                         />
 
@@ -140,7 +140,7 @@ const Profile = () => {
                     <div className="card">
                         <div className="card-body">
                             <div className="container-fluid">
-                                <img  ref={(input)=>userImgView=input} className="justify-content-center" style={{height:"300px",width:"300px"}} src={profileData['Photo']} alt=""/>
+                                <img  ref={(input)=>userImgView=input} src={profileData.Photo} className="justify-content-center" style={{height:"300px",width:"300px"}} alt=""/>
                                 <hr/>
                                 <div className="row">
                                     <div className="col-4 p-2">

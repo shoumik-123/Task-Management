@@ -293,7 +293,7 @@ export function GetProfileDetails() {
 export function UpdateProfile(firstName,lastName,mobile,password,photo) {
     store.dispatch(ShowLoader());
 
-    const URL = BaseURL + "/UpdateProfile"
+    const URL = BaseURL + "/profileUpdate"
     let PostBody = {
         FirstName :firstName,
         LastName :lastName,
@@ -301,12 +301,15 @@ export function UpdateProfile(firstName,lastName,mobile,password,photo) {
         Password :password,
         Photo :photo
     }
-    let UserDetails = {
+    let UserDetails = [{
+
+
         FirstName :firstName,
         LastName :lastName,
         Mobile :mobile,
         Photo :photo
-    }
+    }]
+    console.log(UserDetails)
 
     return axios.post(URL,PostBody,AxiosHeader)
         .then((result)=>{
@@ -318,11 +321,13 @@ export function UpdateProfile(firstName,lastName,mobile,password,photo) {
             }
             else {
                 ErrorToast("Profile Update Failed")
+                return false;
             }
         })
         .catch((err)=>{
             store.dispatch(HideLoader())
             ErrorToast("Something Wrong")
+            return false;
         })
 
 }
