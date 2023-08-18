@@ -26,6 +26,7 @@ const Login = () => {
              LoginRequest(email,password).then((result)=>{
                  if(result===true){
                      window.location.href="/"
+
                  }
              })
          }

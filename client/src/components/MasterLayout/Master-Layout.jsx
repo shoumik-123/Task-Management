@@ -100,7 +100,7 @@ const MasterLayout = () => {
     return (
 
         <div>
-            <nav className="navbar fixed-top">
+            <nav className="navbar fixed-top mb-5">
                 <div className="top-section">
                     <div>
                         <FaBars onClick={toggle} />
@@ -114,7 +114,7 @@ const MasterLayout = () => {
                     <button className="profile-menu-toggle" onClick={toggleMenu}>
                         <img
                             className="profile-menu-avatar"
-                            src={getUserDetails().Photo}
+                            src={getUserDetails()[0].Photo}
                             alt="Profile"
                         />
 

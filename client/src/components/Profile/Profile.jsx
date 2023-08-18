@@ -14,7 +14,7 @@ const Profile = () => {
 
     useEffect(() => {
         GetProfileDetails()
-        console.log(getUserDetails())
+        console.log("userdetails",getUserDetails())
     }, []);
 
 
@@ -26,7 +26,7 @@ const Profile = () => {
         const ImgFile = userImgRef.files[0];
         getBase64(ImgFile).then((base64Img)=>{
             userImgView.src=base64Img;
-            console.log(base64Img)
+            console.log("base64",base64Img)
         })
 
 
@@ -61,6 +61,7 @@ const Profile = () => {
         else {
             UpdateProfile(firstName , lastName , mobile , password , photo).then((result)=>{
                 if (result){
+                    console.log("update profile result",result)
                     navigate('/')
                 }
             })

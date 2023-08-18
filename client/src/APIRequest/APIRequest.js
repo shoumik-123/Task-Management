@@ -44,7 +44,7 @@ export function RegistrationRequest(firstName , lastName , mobile , email, passw
                     ErrorToast("Email Already Exists");
                     return false;
                 } else {
-                    ErrorToast("Something Went Wrong");
+                    ErrorToast("Registration Fail");
                     return false;
                 }
 
@@ -82,6 +82,8 @@ export function LoginRequest(email,password) {
         if(res.status===200){
             setToken(res.data['token'])
             setUserDetails(res.data['data'])
+            console.log("etUserDetails(res.data['data'])------>",  res.data)
+            console.log("etUserDetails(res.data['data'])------>",  res.data['data'])
             SuccessToast("Login Success")
             return true;
         }
@@ -121,7 +123,7 @@ export function NewTaskCreate(title ,description) {
             return true;
         }
         else {
-            ErrorToast("Something Wrong")
+            ErrorToast("Task Create Fail")
             return false;
         }
     }).catch((err)=>{
@@ -302,8 +304,6 @@ export function UpdateProfile(firstName,lastName,mobile,password,photo) {
         Photo :photo
     }
     let UserDetails = [{
-
-
         FirstName :firstName,
         LastName :lastName,
         Mobile :mobile,
