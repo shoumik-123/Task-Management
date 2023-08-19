@@ -48,6 +48,9 @@
 import { RouterProvider } from 'react-router-dom';
 import AppRouter from "./Routes/routes";
 import FullScreenLoader from "./components/MasterLayout/FullScreen-Loader";
+import {ToastContainer} from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css"
 
 
 function App() {
@@ -55,6 +58,7 @@ function App() {
         <div>
             <RouterProvider router={AppRouter}></RouterProvider>
             <FullScreenLoader/>
+            <ToastContainer/>
         </div>
     );
 }

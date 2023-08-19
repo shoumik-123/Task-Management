@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {Fragment} from 'react';
+import SendOTPPage from "../../pages/AccountRecover/Send-OTP-Page";
 
 const ForgetPassword = () => {
     return (
-        <div>
-            
-        </div>
+        <Fragment>
+            <SendOTPPage/>
+        </Fragment>
     );
 };
 

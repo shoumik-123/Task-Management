@@ -69,7 +69,7 @@ const Login = () => {
                             <div className="text-center">
                                 <Link to="/registration" className="text-decoration-none">Sign Up</Link>
                                 <br/>
-                                <Link to="/forgetPassword" className="text-decoration-none">Forget Password</Link>
+                                <Link to="/sendOTP" className="text-decoration-none">Forget Password</Link>
                             </div>
                         </div>
                     </motion.div>

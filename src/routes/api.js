@@ -14,11 +14,20 @@ router.get("/ProfileDetails",AuthVerifyMiddleware,UsersController.ProfileDetails
 
 
 
+
 router.post("/createTask",AuthVerifyMiddleware ,TasksController.createTask)
 router.get("/updateTaskStatus/:id/:status",AuthVerifyMiddleware ,TasksController.updateTaskStatus)
 router.post("/deleteTask/:id",AuthVerifyMiddleware ,TasksController.deleteTask)
 router.get("/listTaskByStatus/:status",AuthVerifyMiddleware ,TasksController.listTaskByStatus)
 router.get("/taskStatusByCount",AuthVerifyMiddleware ,TasksController.taskStatusByCount)
+
+
+
+
+
+//Recovery password
+
+router.get("/RecoverVerifyEmail/:email",UsersController.RecoverVerifyEmail)
 
 
 module.exports =router;

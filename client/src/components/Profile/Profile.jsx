@@ -14,22 +14,17 @@ const Profile = () => {
 
     useEffect(() => {
         GetProfileDetails()
-        console.log("userdetails",getUserDetails())
     }, []);
 
 
     const profileData = useSelector((state)=>state.profile.value)
-    console.log(profileData)
 
 
     function PreviewImage() {
         const ImgFile = userImgRef.files[0];
         getBase64(ImgFile).then((base64Img)=>{
-            userImgView.src=base64Img;
-            console.log("base64",base64Img)
+            userImgView.src=base64Img
         })
-
-
     }
 
 
@@ -40,7 +35,7 @@ const Profile = () => {
         let lastName = lastNameRef.value;
         let mobile = mobileRef.value;
         let password = passwordRef.value;
-        let photo = userImgView.value;
+        let photo = userImgView.src;
 
 
         if(IsEmpty(firstName)){
@@ -61,7 +56,6 @@ const Profile = () => {
         else {
             UpdateProfile(firstName , lastName , mobile , password , photo).then((result)=>{
                 if (result){
-                    console.log("update profile result",result)
                     navigate('/')
                 }
             })
@@ -105,7 +99,9 @@ const Profile = () => {
             <nav className="navbar fixed-top">
                 <div className="top-section">
 
-                    <motion.a href="/" initial="hidden" animate="show" exit="hidden" variants={inputAnimation} className="logo text-light text-decoration-none">logo</motion.a>
+                    <motion.a href="/" initial="hidden" animate="show" exit="hidden" variants={inputAnimation} className="logo text-light text-decoration-none">
+                        <img src="../../../src/assets/img/task-icon.png" alt="Logo"/>
+                    </motion.a>
 
                 </div>
 

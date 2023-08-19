@@ -5,12 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="acf55433-80d6-40bb-a214-835003827bfb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/components/AccountRecovery/Create-Password.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/AccountRecovery/Send-OTP.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/AccountRecovery/Verify-OTP.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/AccountRecover/Create-Password-Page.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/AccountRecover/Send-OTP-Page.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/AccountRecover/Verify-OTP-Page.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/OTPModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utility/SendEmailUtility.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/APIRequest/APIRequest.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/APIRequest/APIRequest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Routes/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/ForgetPassword/ForgetPassword.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ForgetPassword/ForgetPassword.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Login/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/MasterLayout/Master-Layout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/MasterLayout/Master-Layout.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Profile/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/helper/FormHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/helper/FormHelper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/helper/SessionHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/helper/SessionHelper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/UsersController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/UsersController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/api.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +109,7 @@
       <workItem from="1692175620394" duration="1255000" />
       <workItem from="1692203945393" duration="3688000" />
       <workItem from="1692297586761" duration="3190000" />
+      <workItem from="1692380649269" duration="20486000" />
     </task>
     <servers />
   </component>

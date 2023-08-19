@@ -269,8 +269,6 @@ export function UpdateStatus(id,status) {
         return false;
     })
 }
-
-
 export function GetProfileDetails() {
     store.dispatch(ShowLoader())
 
@@ -291,7 +289,6 @@ export function GetProfileDetails() {
             ErrorToast("Something Wrong")
         })
 }
-
 export function UpdateProfile(firstName,lastName,mobile,password,photo) {
     store.dispatch(ShowLoader());
 
@@ -309,7 +306,6 @@ export function UpdateProfile(firstName,lastName,mobile,password,photo) {
         Mobile :mobile,
         Photo :photo
     }]
-    console.log(UserDetails)
 
     return axios.post(URL,PostBody,AxiosHeader)
         .then((result)=>{
@@ -330,6 +326,87 @@ export function UpdateProfile(firstName,lastName,mobile,password,photo) {
             return false;
         })
 
+}
+
+
+
+//Recover Password
+export function RecoverVerifyEmail(email) {
+    store.dispatch(ShowLoader())
+
+    let URL = BaseURL +"/VerifyEmail/"+email;
+
+    return axios.get(URL)
+        .then((result)=>{
+            store.dispatch(HideLoader())
+
+            if(result.status===200){
+                return true;
+            }
+            else {
+                ErrorToast(".........")
+            }
+        })
+        .catch((err)=>{
+            store.dispatch(HideLoader())
+
+            return false;
+        })
+}
+
+export function RecoverVerifyOTP(email,OTP) {
+    store.dispatch(ShowLoader())
+
+    let URL = BaseURL +  "/VerifyOTP/" + email +"/"+OTP;
+
+
+    return axios.get(URL)
+        .then((result)=>{
+            store.dispatch(HideLoader())
+
+            if(result.status===200){
+                return true;
+            }
+            else {
+                ErrorToast(".........")
+            }
+        })
+        .catch((err)=>{
+            store.dispatch(HideLoader())
+
+            return false;
+        })
+}
+
+
+
+export function RecoverResetPassword(email,OTP,Password) {
+    store.dispatch(ShowLoader())
+
+    let URL = BaseURL +  "/resetPassword"
+
+    let PostBody={
+        Email :email,
+        OTP :OTP,
+        Password:Password
+    }
+
+    return axios.post(URL,PostBody)
+        .then((result)=>{
+            store.dispatch(HideLoader())
+
+            if(result.status===200){
+                return true;
+            }
+            else {
+                ErrorToast(".........")
+            }
+        })
+        .catch((err)=>{
+            store.dispatch(HideLoader())
+
+            return false;
+        })
 }
 
 

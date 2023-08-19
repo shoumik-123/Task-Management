@@ -12,6 +12,9 @@ import NewPage from "../pages/New-Page";
 import {createBrowserRouter, Navigate} from "react-router-dom";
 import ForgetPasswordPage from "../pages/ForgetPassword-Page";
 import { getToken } from "../helper/SessionHelper";
+import SendOTPPage from "../pages/AccountRecover/Send-OTP-Page";
+import VerifyOTPPage from "../pages/AccountRecover/Verify-OTP-Page";
+import CreatePasswordPage from "../pages/AccountRecover/Create-Password-Page";
 
 // Define the router configuration based on token presence
 const routerConfig = getToken()
@@ -93,10 +96,28 @@ const routerConfig = getToken()
             path: "*",
             element: <Page404></Page404>,
         },
+
+
+
         {
             path: "/forgetPassword",
             element: <ForgetPasswordPage></ForgetPasswordPage>,
         },
+
+
+
+        {
+            path: "/SendOTP",
+            element: <SendOTPPage></SendOTPPage>,
+        },
+        {
+            path: "/verifyOTP",
+            element: <VerifyOTPPage></VerifyOTPPage>,
+        },
+        {
+            path: "/createPassword",
+            element: <CreatePasswordPage></CreatePasswordPage>,
+        }
     ];
 
 // Create the router based on the configured routes
