@@ -104,26 +104,19 @@ exports.RecoverVerifyEmail= async (req,res)=>{
                 $count:"total"
             }
         ]))
-
-
         if(UserCount[0].total > 0){
 
             //OTP insert
             let CreateOTP = await OTPModel.create({Email:email , Otp : OTPCode})
 
-
             //Send email
             let SendEmail = await SendEmailUtility(email , "Your PIN code is =  " + OTPCode , "Task Manager PIN verification.")
 
-            res.status(20).json({status:"Success" , data: SendEmail})
-
-
+            res.status(200).json({status:"Success" , data: SendEmail})
         }
         else {
             res.status(201).json({status:"Fail" , data: "No User Found."})
-
         }
-
     }
     catch (err) {
         res.status(400).json({status:"Fail" , data: err})
