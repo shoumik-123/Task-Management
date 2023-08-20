@@ -28,6 +28,7 @@ router.get("/taskStatusByCount",AuthVerifyMiddleware ,TasksController.taskStatus
 //Recovery password
 
 router.get("/RecoverVerifyEmail/:email",UsersController.RecoverVerifyEmail)
+router.get("/RecoverVerifyOTP/:email/:otp",UsersController.RecoverVerifyOTP)
 
 
 module.exports =router;

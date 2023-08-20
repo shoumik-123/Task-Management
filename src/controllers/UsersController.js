@@ -122,3 +122,47 @@ exports.RecoverVerifyEmail= async (req,res)=>{
         res.status(400).json({status:"Fail" , data: err})
     }
 }
+
+
+
+exports.RecoverVerifyOTP= async (req,res)=>{
+    let email = req.params.email;
+    let OTPCode = req.params.otp;
+    let status = 0;
+    let statusUpdate = 1;
+
+    console.log(OTPCode,email)
+
+    try{
+
+        let OTPCount = (await OTPModel.aggregate([
+            {$match:{
+                    Email:email,
+                    Otp : OTPCode,
+                    Status : status
+                }},
+            {
+                $count:"total"
+            }
+        ]))
+
+        if(OTPCount[0].total > 0){
+            let OTPUpdate = await OTPModel.updateOne(
+                {Email:email, Otp : OTPCode, Status : status},
+                {Email:email, Otp : OTPCode, Status : statusUpdate}
+            )
+
+            res.status(200).json({status:"Success" , data: "Update OTP."});
+
+        }
+
+
+        else {
+            res.status(201).json({status:"Success" , data: "Invalid OTP."})
+        }
+
+    }
+    catch (err) {
+        res.status(400).json({status:"Fail" , data: err})
+    }
+}
