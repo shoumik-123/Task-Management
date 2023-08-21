@@ -29,6 +29,7 @@ router.get("/taskStatusByCount",AuthVerifyMiddleware ,TasksController.taskStatus
 
 router.get("/RecoverVerifyEmail/:email",UsersController.RecoverVerifyEmail)
 router.get("/RecoverVerifyOTP/:email/:otp",UsersController.RecoverVerifyOTP)
+router.post("/RecoverResetPassword",UsersController.RecoverResetPassword)
 
 
 module.exports =router;

@@ -19,8 +19,6 @@ exports.Registration =(req, res)=>{
             res.status(200).json({status: "Fail", data: err})
         })
 }
-
-
 exports.UserLogin =(req,res)=>{
     let reqBody= req.body;
     UsersModel.aggregate([
@@ -44,7 +42,6 @@ exports.UserLogin =(req,res)=>{
     })
 
 }
-
 exports.UpdateProfile = (req, res) => {
     let email = req.headers['email'];
     let reqBody = req.body;
@@ -57,8 +54,6 @@ exports.UpdateProfile = (req, res) => {
             res.status(400).json({ status: "Fail", data: err });
         });
 };
-
-
 exports.ProfileDetails = (req , res)=>{
     let email = req.headers['email'];
 
@@ -122,16 +117,12 @@ exports.RecoverVerifyEmail= async (req,res)=>{
         res.status(400).json({status:"Fail" , data: err})
     }
 }
-
-
-
 exports.RecoverVerifyOTP= async (req,res)=>{
     let email = req.params.email;
     let OTPCode = req.params.otp;
     let status = 0;
     let statusUpdate = 1;
 
-    console.log(OTPCode,email)
 
     try{
 
@@ -152,7 +143,7 @@ exports.RecoverVerifyOTP= async (req,res)=>{
                 {Email:email, Otp : OTPCode, Status : statusUpdate}
             )
 
-            res.status(200).json({status:"Success" , data: "Update OTP."});
+            res.status(200).json({status:"Success" , data: OTPUpdate});
 
         }
 
@@ -161,6 +152,40 @@ exports.RecoverVerifyOTP= async (req,res)=>{
             res.status(201).json({status:"Success" , data: "Invalid OTP."})
         }
 
+    }
+    catch (err) {
+        res.status(400).json({status:"Fail" , data: err})
+    }
+}
+exports.RecoverResetPassword= async (req,res)=>{
+    let email = req.body['Email'];
+    let OTPCode = req.body['Otp'];
+    let NewPassword = req.body['NewPassword'];
+    let statusUpdate = 1;
+
+    try{
+
+        let OTPUsedCount = await OTPModel.aggregate([
+            {$match:{
+                    Email:email,
+                    Otp : OTPCode,
+                    Status : statusUpdate
+                }},
+            {
+                $count:"total"
+            }
+        ])
+
+        if(OTPUsedCount[0].total > 0){
+            let PasswordUpdate = await UsersModel.updateOne(
+                {Email:email},
+                {Password : NewPassword}
+            )
+            res.status(200).json({status:"Success" , data: PasswordUpdate});
+        }
+        else {
+            res.status(201).json({status:"Success" , data: "Invalid Password."})
+        }
     }
     catch (err) {
         res.status(400).json({status:"Fail" , data: err})
