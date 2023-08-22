@@ -160,7 +160,7 @@ exports.RecoverVerifyOTP= async (req,res)=>{
 exports.RecoverResetPassword= async (req,res)=>{
     let email = req.body['Email'];
     let OTPCode = req.body['Otp'];
-    let NewPassword = req.body['NewPassword'];
+    let NewPassword = req.body['Password'];
     let statusUpdate = 1;
 
     try{

@@ -15,7 +15,6 @@ const Login = () => {
 
          if(!IsEmail(email)){
              ErrorToast("Invalid Email")
-             {console.log(email)}
          }
 
          else if(IsEmpty(password)){

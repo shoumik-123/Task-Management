@@ -2,7 +2,7 @@ import axios from "axios";
 import {ErrorToast, SuccessToast} from "../helper/FormHelper";
 import store from "../redux/store/store";
 import {HideLoader, ShowLoader} from "../redux/state/settings-slice";
-import {getToken, setToken, setUserDetails} from "../helper/SessionHelper";
+import {getToken, setEmail, setOTP, setToken, setUserDetails} from "../helper/SessionHelper";
 import {SetCanceledTask, SetCompletedTask, SetNewTask, SetProgressTask} from "../redux/state/task-slice";
 import {SetSummary} from "../redux/state/summary-slice";
 import {SetProfile} from "../redux/state/profil-slice";
@@ -82,8 +82,6 @@ export function LoginRequest(email,password) {
         if(res.status===200){
             setToken(res.data['token'])
             setUserDetails(res.data['data'])
-            console.log("etUserDetails(res.data['data'])------>",  res.data)
-            console.log("etUserDetails(res.data['data'])------>",  res.data['data'])
             SuccessToast("Login Success")
             return true;
         }
@@ -334,13 +332,15 @@ export function UpdateProfile(firstName,lastName,mobile,password,photo) {
 export function RecoverVerifyEmail(email) {
     store.dispatch(ShowLoader())
 
-    let URL = BaseURL +"/VerifyEmail/"+email;
+    let URL = BaseURL +"/RecoverVerifyEmail/"+email;
 
     return axios.get(URL)
         .then((result)=>{
             store.dispatch(HideLoader())
 
             if(result.status===200){
+                setEmail(email)
+                SuccessToast("A 6 Digit verification code has been sent to your email address. ");
                 return true;
             }
             else {
@@ -357,7 +357,7 @@ export function RecoverVerifyEmail(email) {
 export function RecoverVerifyOTP(email,OTP) {
     store.dispatch(ShowLoader())
 
-    let URL = BaseURL +  "/VerifyOTP/" + email +"/"+OTP;
+    let URL = BaseURL +  "/RecoverVerifyOTP/" + email +"/"+OTP;
 
 
     return axios.get(URL)
@@ -365,6 +365,8 @@ export function RecoverVerifyOTP(email,OTP) {
             store.dispatch(HideLoader())
 
             if(result.status===200){
+                setOTP(OTP);
+                SuccessToast("Code Verification Success");
                 return true;
             }
             else {
@@ -383,11 +385,11 @@ export function RecoverVerifyOTP(email,OTP) {
 export function RecoverResetPassword(email,OTP,Password) {
     store.dispatch(ShowLoader())
 
-    let URL = BaseURL +  "/resetPassword"
+    let URL = BaseURL +  "/RecoverResetPassword"
 
     let PostBody={
         Email :email,
-        OTP :OTP,
+        Otp :OTP,
         Password:Password
     }
 

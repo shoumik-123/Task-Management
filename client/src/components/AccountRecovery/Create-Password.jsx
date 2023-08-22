@@ -2,6 +2,7 @@ import React, {Fragment, useRef} from 'react';
 import {ErrorToast, IsEmail, IsEmpty, SuccessToast} from "../../helper/FormHelper";
 import {RecoverResetPassword} from "../../APIRequest/APIRequest";
 import {useNavigate} from "react-router-dom";
+import {getEmail, getOTP} from "../../helper/SessionHelper";
 
 const CreatePassword = () => {
     let navigate = useNavigate()
@@ -20,10 +21,12 @@ const CreatePassword = () => {
             ErrorToast("Password & Confirm Password is not same!")
         }
         else {
-            SuccessToast("")
-            RecoverResetPassword(Password).then((result)=>{
-                if(result){
+            RecoverResetPassword(getEmail(),getOTP(),Password).then((result)=>{
+                console.log(getOTP(),getEmail(),result)
+                if(result===true){
                     navigate("/login")
+                    SuccessToast("Password Change Successfully")
+
                 }
             })
         }

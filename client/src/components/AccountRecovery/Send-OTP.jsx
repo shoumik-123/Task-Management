@@ -35,7 +35,7 @@ const SendOtp = () => {
                                 <h6>Your email address</h6>
                                 <input ref={(input)=>emailRef=input} placeholder="User Email" className="form-control" type="email"/>
                                 <br/>
-                                <button onClick={VerifyEmail}  className="btn w-100 float-end btn-primary">Next</button>
+                                <button onClick={VerifyEmail}  className="btn w-100 float-end btn-primary">Send OTP Code</button>
                             </div>
                         </div>
                     </div>

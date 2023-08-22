@@ -100,7 +100,7 @@ const Profile = () => {
                 <div className="top-section">
 
                     <motion.a href="/" initial="hidden" animate="show" exit="hidden" variants={inputAnimation} className="logo text-light text-decoration-none">
-                        <img src="../../../src/assets/img/task-icon.png" alt="Logo"/>
+                        logo
                     </motion.a>
 
                 </div>
