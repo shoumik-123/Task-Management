@@ -385,6 +385,7 @@ export function RecoverVerifyOTP(email,OTP) {
             }
             else {
                 ErrorToast("Something Wrong")
+                return false
             }
         })
         .catch((err)=>{
@@ -412,6 +413,7 @@ export function RecoverResetPassword(email,OTP,Password) {
             store.dispatch(HideLoader())
 
             if(result.status===200){
+                SuccessToast("Password Change Successfully")
                 return true;
             }
             else {

@@ -22,7 +22,6 @@ const CreatePassword = () => {
         }
         else {
             RecoverResetPassword(getEmail(),getOTP(),Password).then((result)=>{
-                console.log(getOTP(),getEmail(),result)
                 if(result===true){
                     navigate("/login")
                     SuccessToast("Password Change Successfully")
@@ -42,7 +41,7 @@ const CreatePassword = () => {
                                 <h4>SET NEW PASSWORD</h4>
                                 <br/>
                                 <label>Your email address</label>
-                                <input readOnly={true} placeholder="User Email" className="form-control" type="email"/>
+                                <input readOnly={true} value={getEmail()} className="form-control" type="email"/>
                                 <br/>
                                 <label>New Password</label>
                                 <input  ref={(input)=>PasswordRef=input} placeholder="New Password" className="form-control" type="password"/>

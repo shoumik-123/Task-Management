@@ -184,7 +184,7 @@ exports.RecoverResetPassword= async (req,res)=>{
             res.status(200).json({status:"Success" , data: PasswordUpdate});
         }
         else {
-            res.status(201).json({status:"Success" , data: "Invalid Password."})
+            res.status(201).json({status:"Fail" , data: "Invalid Password."})
         }
     }
     catch (err) {
