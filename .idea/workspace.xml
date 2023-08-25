@@ -7,11 +7,8 @@
     <list default="true" id="acf55433-80d6-40bb-a214-835003827bfb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/APIRequest/APIRequest.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/APIRequest/APIRequest.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/AccountRecovery/Create-Password.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/AccountRecovery/Create-Password.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/AccountRecovery/Send-OTP.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/AccountRecovery/Send-OTP.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/AccountRecovery/Verify-OTP.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/AccountRecovery/Verify-OTP.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Login/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Profile/Profile.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/UsersController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/UsersController.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,6 +96,7 @@
       <workItem from="1692557420706" duration="6946000" />
       <workItem from="1692652733840" duration="3171000" />
       <workItem from="1692657908095" duration="4765000" />
+      <workItem from="1692989509048" duration="2295000" />
     </task>
     <servers />
   </component>

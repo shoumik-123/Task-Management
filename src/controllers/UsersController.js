@@ -110,7 +110,7 @@ exports.RecoverVerifyEmail= async (req,res)=>{
             res.status(200).json({status:"Success" , data: SendEmail})
         }
         else {
-            res.status(201).json({status:"Fail" , data: "No User Found."})
+            res.status(200).json({status:"Fail" , data: "No User Found."})
         }
     }
     catch (err) {
@@ -149,7 +149,7 @@ exports.RecoverVerifyOTP= async (req,res)=>{
 
 
         else {
-            res.status(201).json({status:"Success" , data: "Invalid OTP."})
+            res.status(201).json({status:"Fail" , data: "Invalid OTP."})
         }
 
     }

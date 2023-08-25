@@ -29,8 +29,10 @@ const VerifyOtp = () => {
     function SubmitOTP() {
         if(OTP.length===6){
             RecoverVerifyOTP(getEmail(),OTP).then((result)=>{
-                console.log(result)
-                navigate ("/createPassword")
+                if (result===true){
+                    navigate ("/createPassword")
+                }
+
 
             })
         }

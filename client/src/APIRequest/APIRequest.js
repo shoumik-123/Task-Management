@@ -339,17 +339,24 @@ export function RecoverVerifyEmail(email) {
             store.dispatch(HideLoader())
 
             if(result.status===200){
-                setEmail(email)
-                SuccessToast("A 6 Digit verification code has been sent to your email address. ");
-                return true;
+                if(result.data[['status']] ==="Fail"){
+                    ErrorToast("No user Found")
+                    return false;
+                }
+                else {
+                    setEmail(email)
+                    SuccessToast("A 6 Digit verification code has been sent to your email address. ");
+                    return true;
+                }
+
             }
             else {
-                ErrorToast(".........")
+                ErrorToast("Something Wrong")
             }
         })
         .catch((err)=>{
             store.dispatch(HideLoader())
-
+            ErrorToast("Something Wrong")
             return false;
         })
 }
@@ -365,17 +372,24 @@ export function RecoverVerifyOTP(email,OTP) {
             store.dispatch(HideLoader())
 
             if(result.status===200){
-                setOTP(OTP);
-                SuccessToast("Code Verification Success");
-                return true;
+                if (result.data['status']==="Fail"){
+                    ErrorToast("Invalid OTP")
+                    return false;
+                }
+                else {
+                    setOTP(OTP);
+                    SuccessToast("Code Verification Success");
+                    return true;
+                }
+
             }
             else {
-                ErrorToast(".........")
+                ErrorToast("Something Wrong")
             }
         })
         .catch((err)=>{
             store.dispatch(HideLoader())
-
+            ErrorToast("Something Wrong")
             return false;
         })
 }
@@ -401,11 +415,12 @@ export function RecoverResetPassword(email,OTP,Password) {
                 return true;
             }
             else {
-                ErrorToast(".........")
+                ErrorToast("Something Wrong")
             }
         })
         .catch((err)=>{
             store.dispatch(HideLoader())
+            ErrorToast("Something Wrong")
 
             return false;
         })
